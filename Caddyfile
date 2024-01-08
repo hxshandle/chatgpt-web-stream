@@ -1,0 +1,11 @@
+:4000 {
+  handle /v1/* {
+    reverse_proxy :3000
+  }
+
+  handle {
+    reverse_proxy :5174
+  }
+}
+
+

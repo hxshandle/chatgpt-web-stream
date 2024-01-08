@@ -55,6 +55,8 @@ export const checkModel = async (modelDetail: ModelDetail) => {
         // image request.  If we have any models, allow image endpoint
         modelDetail.enabled = !!Object.keys(supportedModels).length
   }
+  console.log('checkModel', modelDetail, supportedModels)
+  modelDetail.enabled = true
 }
 
 </script>

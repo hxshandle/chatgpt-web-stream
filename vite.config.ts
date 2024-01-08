@@ -26,7 +26,15 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     }
   } else {
     return {
-      plugins
+      plugins,
+      server: {
+        proxy: {
+          "/v1": {
+            target: "http://localhost:3000",
+            changeOrigin: true,
+          },
+        },
+      },
     }
   }
 })

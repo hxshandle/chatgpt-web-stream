@@ -131,6 +131,7 @@ export class ChatCompletionResponse {
     if (!response.choices || response?.error) {
       return this.updateFromError(response?.error?.message || 'unexpected streaming response from API')
     }
+    
     response.choices?.forEach((choice, i) => {
       const message = this.messages[i] || {
         role: 'assistant',
@@ -161,7 +162,7 @@ export class ChatCompletionResponse {
     })
     const finished = !this.messages.find(m => m.streaming)
     this.notifyMessageChange()
-    if (finished) this.finish()
+    if (finished && this.messages.length != 0) this.finish()
   }
 
   updateFromError (errorMessage: string): void {

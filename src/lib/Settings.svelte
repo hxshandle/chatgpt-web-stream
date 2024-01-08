@@ -445,13 +445,13 @@ const chatSettingsList: ChatSetting[] = [
       ...summarySettings,
       // ...responseAlterationSettings,
       modelSetting,
-      {
-        key: 'stream',
-        name: 'Stream Response',
-        title: 'Stream responses as they are generated.',
-        type: 'boolean',
-        hide: hideModelSetting
-      },
+      // {
+      //   key: 'stream',
+      //   name: 'Stream Response',
+      //   title: 'Stream responses as they are generated.',
+      //   type: 'boolean',
+      //   hide: hideModelSetting
+      // },
       {
         key: 'holdSocket',
         name: 'Continue WebSocket',

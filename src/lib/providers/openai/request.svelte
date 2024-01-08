@@ -53,7 +53,6 @@ export const chatRequest = async (
               // ?? anything to do when "[DONE]"?
               } else {
                 const data = JSON.parse(ev.data)
-                // console.log('data', data)
                 window.setTimeout(() => { chatResponse.updateFromAsyncResponse(data) }, 1)
               }
             }
